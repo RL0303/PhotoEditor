@@ -13,6 +13,11 @@
 		6ECD27EB28ACD4800068D484 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6ECD27E928ACD4800068D484 /* Main.storyboard */; };
 		6ECD27ED28ACD4820068D484 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6ECD27EC28ACD4820068D484 /* Assets.xcassets */; };
 		6ECD27F028ACD4820068D484 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6ECD27EE28ACD4820068D484 /* LaunchScreen.storyboard */; };
+		6ECD27F828AD08C30068D484 /* imageEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ECD27F728AD08C30068D484 /* imageEditViewController.swift */; };
+		6ECD27FA28AD09070068D484 /* imageRatioEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ECD27F928AD09070068D484 /* imageRatioEditViewController.swift */; };
+		6ECD27FC28AD09240068D484 /* imageFilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ECD27FB28AD09240068D484 /* imageFilterViewController.swift */; };
+		6ECD27FE28AD093C0068D484 /* imageAdjustViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ECD27FD28AD093C0068D484 /* imageAdjustViewController.swift */; };
+		6ECD280028AD09640068D484 /* orientation-extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ECD27FF28AD09640068D484 /* orientation-extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +29,11 @@
 		6ECD27EC28ACD4820068D484 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6ECD27EF28ACD4820068D484 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6ECD27F128ACD4820068D484 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6ECD27F728AD08C30068D484 /* imageEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = imageEditViewController.swift; sourceTree = "<group>"; };
+		6ECD27F928AD09070068D484 /* imageRatioEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = imageRatioEditViewController.swift; sourceTree = "<group>"; };
+		6ECD27FB28AD09240068D484 /* imageFilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = imageFilterViewController.swift; sourceTree = "<group>"; };
+		6ECD27FD28AD093C0068D484 /* imageAdjustViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = imageAdjustViewController.swift; sourceTree = "<group>"; };
+		6ECD27FF28AD09640068D484 /* orientation-extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "orientation-extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +69,11 @@
 				6ECD27E328ACD4800068D484 /* AppDelegate.swift */,
 				6ECD27E528ACD4800068D484 /* SceneDelegate.swift */,
 				6ECD27E728ACD4800068D484 /* ViewController.swift */,
+				6ECD27F728AD08C30068D484 /* imageEditViewController.swift */,
+				6ECD27F928AD09070068D484 /* imageRatioEditViewController.swift */,
+				6ECD27FB28AD09240068D484 /* imageFilterViewController.swift */,
+				6ECD27FD28AD093C0068D484 /* imageAdjustViewController.swift */,
+				6ECD27FF28AD09640068D484 /* orientation-extension.swift */,
 				6ECD27E928ACD4800068D484 /* Main.storyboard */,
 				6ECD27EC28ACD4820068D484 /* Assets.xcassets */,
 				6ECD27EE28ACD4820068D484 /* LaunchScreen.storyboard */,
@@ -138,7 +153,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6ECD27FE28AD093C0068D484 /* imageAdjustViewController.swift in Sources */,
+				6ECD27FC28AD09240068D484 /* imageFilterViewController.swift in Sources */,
+				6ECD27F828AD08C30068D484 /* imageEditViewController.swift in Sources */,
 				6ECD27E828ACD4800068D484 /* ViewController.swift in Sources */,
+				6ECD280028AD09640068D484 /* orientation-extension.swift in Sources */,
+				6ECD27FA28AD09070068D484 /* imageRatioEditViewController.swift in Sources */,
 				6ECD27E428ACD4800068D484 /* AppDelegate.swift in Sources */,
 				6ECD27E628ACD4800068D484 /* SceneDelegate.swift in Sources */,
 			);

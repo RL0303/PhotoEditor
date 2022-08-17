@@ -51,9 +51,9 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Album" cornerStyle="capsule">
-                                    <backgroundConfiguration key="background" strokeWidth="5">
+                                    <backgroundConfiguration key="background" strokeWidth="3">
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                        <color key="strokeColor" systemColor="systemBlueColor"/>
+                                        <color key="strokeColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </backgroundConfiguration>
                                     <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="30"/>
                                     <color key="baseForegroundColor" systemColor="labelColor"/>
@@ -67,9 +67,9 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Camera" cornerStyle="capsule">
-                                    <backgroundConfiguration key="background" strokeWidth="5">
+                                    <backgroundConfiguration key="background" strokeWidth="3">
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                        <color key="strokeColor" systemColor="systemBlueColor"/>
+                                        <color key="strokeColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </backgroundConfiguration>
                                     <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="30"/>
                                     <color key="baseForegroundColor" systemColor="labelColor"/>
@@ -100,9 +100,6 @@
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemBlueColor">
-            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
