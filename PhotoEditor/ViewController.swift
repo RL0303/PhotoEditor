@@ -84,6 +84,10 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
     
     
+    @IBSegueAction func imageEdit(_ coder: NSCoder) -> imageEditViewController? {
+        return imageEditViewController(coder: coder, selectItem: photoImage)
+    }
+    
     
 }
 

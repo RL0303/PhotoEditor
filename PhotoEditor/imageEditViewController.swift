@@ -8,6 +8,23 @@
 import UIKit
 
 class imageEditViewController: UIViewController {
+    
+    //selectItem儲存上一頁傳過來的圖片
+    var selectItem = UIImage()
+    //renderImage儲存最後編輯完輸出的圖片
+    var renderImage = UIImage()
+    //editedImage儲存這一頁編輯完的圖片
+    var editedImage = UIImage()
+    
+    //圖片檔案傳輸
+    init?(coder: NSCoder, selectItem: UIImage){
+        self.selectItem = selectItem
+        super.init(coder: coder)
+        }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
