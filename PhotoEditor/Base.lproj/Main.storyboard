@@ -143,11 +143,7 @@
                                     <backgroundConfiguration key="background" image="square.and.arrow.down" catalog="system"/>
                                 </buttonConfiguration>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Dph-wj-b4Z">
-                                <rect key="frame" x="0.0" y="186" width="414" height="400"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7S8-xs-1Uk">
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7S8-xs-1Uk" userLabel="meau View">
                                 <rect key="frame" x="0.0" y="760" width="414" height="169"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
@@ -202,18 +198,37 @@
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemOrangeColor"/>
                             </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3zy-e6-rTc">
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3zy-e6-rTc" userLabel="Decoration View">
                                 <rect key="frame" x="0.0" y="594" width="414" height="169"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lIi-Hu-FPv">
-                                        <rect key="frame" x="136" y="68" width="49" height="32"/>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AMd-tH-8Sl" userLabel="Adjust Font View">
+                                        <rect key="frame" x="66" y="48" width="283" height="122"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain">
-                                            <backgroundConfiguration key="background" image="textformat.size" catalog="system"/>
-                                        </buttonConfiguration>
-                                    </button>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lIi-Hu-FPv">
+                                                <rect key="frame" x="70" y="20" width="49" height="32"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain">
+                                                    <backgroundConfiguration key="background" image="textformat.size" catalog="system"/>
+                                                </buttonConfiguration>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hXa-Wg-Bpy">
+                                                <rect key="frame" x="149" y="20" width="49" height="32"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain">
+                                                    <backgroundConfiguration key="background" image="paintpalette" catalog="system"/>
+                                                </buttonConfiguration>
+                                            </button>
+                                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="MgE-Q1-RvV">
+                                                <rect key="frame" x="18" y="73" width="247" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </slider>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    </view>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L3R-zw-Go6">
                                         <rect key="frame" x="215" y="8" width="49" height="32"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -230,25 +245,65 @@
                                             <backgroundConfiguration key="background" image="textformat.size.smaller" catalog="system"/>
                                         </buttonConfiguration>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hXa-Wg-Bpy">
-                                        <rect key="frame" x="215" y="68" width="49" height="32"/>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="G3W-2N-gSJ" userLabel="Select Sticker View">
+                                        <rect key="frame" x="-1" y="45" width="417" height="136"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain">
-                                            <backgroundConfiguration key="background" image="paintpalette" catalog="system"/>
-                                        </buttonConfiguration>
-                                    </button>
-                                    <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="MgE-Q1-RvV">
-                                        <rect key="frame" x="84" y="121" width="247" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    </slider>
+                                        <subviews>
+                                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fig-KW-AqX">
+                                                <rect key="frame" x="0.0" y="8" width="240" height="128"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <viewLayoutGuide key="contentLayoutGuide" id="OAv-k1-1FT"/>
+                                                <viewLayoutGuide key="frameLayoutGuide" id="tQM-Nl-snc"/>
+                                            </scrollView>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBrownColor"/>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemTealColor"/>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UJn-AJ-gLW" userLabel="Container View">
+                                <rect key="frame" x="0.0" y="186" width="414" height="400"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="p0e-KA-TtA" userLabel="Mirror View">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="400"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Dph-wj-b4Z">
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="400"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </imageView>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="3Xt-wa-pVJ"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <connections>
+                        <outlet property="addFontButton" destination="MDj-2a-S7W" id="U7p-A7-zRA"/>
+                        <outlet property="addStickerButton" destination="L3R-zw-Go6" id="8eF-nF-JWL"/>
+                        <outlet property="adjustFontView" destination="AMd-tH-8Sl" id="isc-WW-jHr"/>
+                        <outlet property="containerView" destination="UJn-AJ-gLW" id="giA-pQ-gaX"/>
+                        <outlet property="decorationView" destination="3zy-e6-rTc" id="dDZ-1d-QAg"/>
+                        <outlet property="dialEditButton" destination="Nwl-bz-P8p" id="xYQ-nd-Z0g"/>
+                        <outlet property="filterEditButton" destination="bcQ-Zo-c7q" id="vj1-qT-Auu"/>
+                        <outlet property="fontColorButton" destination="hXa-Wg-Bpy" id="aek-WH-dxy"/>
+                        <outlet property="fontSizeButton" destination="lIi-Hu-FPv" id="Xgk-01-fYb"/>
+                        <outlet property="fontSizeSlider" destination="MgE-Q1-RvV" id="gD8-gG-YPJ"/>
+                        <outlet property="imageView" destination="Dph-wj-b4Z" id="9h9-0l-A2S"/>
+                        <outlet property="mirrorView" destination="p0e-KA-TtA" id="GAd-IU-N8X"/>
+                        <outlet property="ratioEditButton" destination="hGD-uX-NFi" id="C8M-c5-QTc"/>
+                        <outlet property="resetButton" destination="bJ3-d1-t5j" id="5qN-nH-m35"/>
+                        <outlet property="selectStickerView" destination="G3W-2N-gSJ" id="P9t-gh-Cgv"/>
+                        <outletCollection property="dotImageViews" destination="W5J-1l-voU" collectionClass="NSMutableArray" id="hCq-Co-HH8"/>
+                        <outletCollection property="dotImageViews" destination="qBc-bz-ATp" collectionClass="NSMutableArray" id="ut0-TV-mYI"/>
+                        <outletCollection property="dotImageViews" destination="7Xu-QT-WLN" collectionClass="NSMutableArray" id="cls-lB-1rZ"/>
+                        <outletCollection property="dotImageViews" destination="nGc-BC-ooS" collectionClass="NSMutableArray" id="qEV-mt-zKz"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LZ7-YG-IW8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -320,6 +375,9 @@
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBrownColor">
+            <color red="0.63529411764705879" green="0.51764705882352946" blue="0.36862745098039218" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemOrangeColor">
             <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
