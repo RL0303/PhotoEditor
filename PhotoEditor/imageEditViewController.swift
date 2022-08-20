@@ -282,7 +282,27 @@ class imageEditViewController: UIViewController {
         turnNum += 1
     }
     
-//    ---
+    //觸發dialEditSegue後傳輸的資料
+    @IBSegueAction func dialEditSegue(_ coder: NSCoder) -> imageAdjustViewController? {
+        //儲存現在的imageView圖片
+        editedImage = imageView.image!
+        return imageAdjustViewController(coder: coder, editedImage: editedImage)
+    }
+    
+    
+    @IBSegueAction func filterEditSegue(_ coder: NSCoder) -> imageFilterViewController? {
+        //儲存現在的imageView圖片
+        editedImage = imageView.image!
+        return imageFilterViewController(coder: coder, editedImage: editedImage)
+    }
+    
+    
+    @IBSegueAction func ratioEditSegue(_ coder: NSCoder) -> imageRatioEditViewController? {
+        //儲存現在的imageView圖片
+        editedImage = imageView.image!
+        return imageRatioEditViewController(coder: coder, editedImage: editedImage)
+    }
+    
     
     //回到上一頁
     @IBAction func returnPage(_ sender: Any) {
@@ -301,7 +321,20 @@ class imageEditViewController: UIViewController {
         
     }
     
+    //從調整亮度、對比、飽和度畫面回來
+    @IBAction func unwindToEditView(_ unwindSegue: UIStoryboardSegue) {
+        let sourceViewController = unwindSegue.source as? imageAdjustViewController
+        //imageView顯示的圖片是傳回來的輸出圖片
+        imageView.image = sourceViewController?.renderImage
+        // Use data from the view controller which initiated the unwind segue
+    }
+    
     //    ---
+    
+    
+    
+    
+    
     
     /*
     // MARK: - Navigation

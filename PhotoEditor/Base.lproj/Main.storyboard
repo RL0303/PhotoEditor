@@ -345,6 +345,9 @@
                                         <buttonConfiguration key="configuration" style="plain">
                                             <backgroundConfiguration key="background" image="dial.min" catalog="system"/>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <segue destination="PSi-Uk-cMr" kind="presentation" destinationCreationSelector="dialEditSegue:" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="ghm-BC-3vA"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hGD-uX-NFi">
                                         <rect key="frame" x="217" y="33" width="49" height="32"/>
@@ -353,6 +356,9 @@
                                         <buttonConfiguration key="configuration" style="plain">
                                             <backgroundConfiguration key="background" image="crop.rotate" catalog="system"/>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <segue destination="BvL-VV-4HA" kind="presentation" destinationCreationSelector="ratioEditSegue:" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="OSH-Mz-APc"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z5c-lX-e3a">
                                         <rect key="frame" x="292" y="33" width="49" height="32"/>
@@ -369,6 +375,9 @@
                                         <buttonConfiguration key="configuration" style="plain">
                                             <backgroundConfiguration key="background" image="camera.filters" catalog="system"/>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <segue destination="o9E-BZ-pBB" kind="presentation" destinationCreationSelector="filterEditSegue:" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="DBg-tU-H2o"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemGray5Color"/>
@@ -410,13 +419,78 @@
                     <view key="view" contentMode="scaleToFill" id="DyS-9S-8KF">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bkp-EM-pgh" userLabel="Container View">
+                                <rect key="frame" x="0.0" y="186" width="414" height="400"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pbb-3r-WYw">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="400"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mTF-vU-wGi">
+                                <rect key="frame" x="310" y="134" width="84" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Done">
+                                    <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="25"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <segue destination="KAa-Po-DUc" kind="unwind" unwindAction="unwindToEditView:" id="YFH-4q-12n"/>
+                                </connections>
+                            </button>
+                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="-1" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="SY5-pm-thZ">
+                                <rect key="frame" x="109" y="634" width="220" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="adjustImage:" destination="PSi-Uk-cMr" eventType="valueChanged" id="hJU-Ad-CTr"/>
+                                </connections>
+                            </slider>
+                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="0.0" maxValue="2" translatesAutoresizingMaskIntoConstraints="NO" id="IU0-In-5ke">
+                                <rect key="frame" x="109" y="690" width="220" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="adjustImage:" destination="PSi-Uk-cMr" eventType="valueChanged" id="S3R-Ip-n9H"/>
+                                </connections>
+                            </slider>
+                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="0.0" maxValue="2" translatesAutoresizingMaskIntoConstraints="NO" id="ZXW-Xf-Kn3">
+                                <rect key="frame" x="109" y="750" width="220" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="adjustImage:" destination="PSi-Uk-cMr" eventType="valueChanged" id="TfR-Qq-39a"/>
+                                </connections>
+                            </slider>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="sun.min" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="D3p-PL-E3W">
+                                <rect key="frame" x="52" y="629" width="35" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="drop.circle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="uIt-hQ-Bcg">
+                                <rect key="frame" x="52" y="747.5" width="35" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="circle.righthalf.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="ugs-bo-5XK">
+                                <rect key="frame" x="52" y="687.5" width="35" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="hB2-C4-0BN"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <connections>
+                        <outlet property="containerView" destination="bkp-EM-pgh" id="c6E-em-OjX"/>
+                        <outlet property="imageView" destination="pbb-3r-WYw" id="vno-nk-kub"/>
+                        <outletCollection property="adjustSliders" destination="SY5-pm-thZ" collectionClass="NSMutableArray" id="SBX-Qd-DTx"/>
+                        <outletCollection property="adjustSliders" destination="IU0-In-5ke" collectionClass="NSMutableArray" id="de1-FN-NMR"/>
+                        <outletCollection property="adjustSliders" destination="ZXW-Xf-Kn3" collectionClass="NSMutableArray" id="a1h-yp-6cF"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="z4i-cz-o7d" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="KAa-Po-DUc" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1677" y="-625"/>
+            <point key="canvasLocation" x="1676.8115942028987" y="-625.44642857142856"/>
         </scene>
         <!--Image Filter View Controller-->
         <scene sceneID="D8f-A6-P4p">
@@ -425,13 +499,30 @@
                     <view key="view" contentMode="scaleToFill" id="Lw2-3W-m1E">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6ig-70-V16">
+                                <rect key="frame" x="0.0" y="186" width="414" height="400"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6xV-jL-8Zw">
+                                <rect key="frame" x="310" y="134" width="84" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Done">
+                                    <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="25"/>
+                                </buttonConfiguration>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="az5-ap-lde"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <connections>
+                        <outlet property="imageView" destination="6ig-70-V16" id="NPy-ev-Iyt"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fuU-bT-qj0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1677" y="66"/>
+            <point key="canvasLocation" x="1676.8115942028987" y="65.625"/>
         </scene>
         <!--Image Ratio Edit View Controller-->
         <scene sceneID="qvM-Ag-39R">
@@ -440,9 +531,26 @@
                     <view key="view" contentMode="scaleToFill" id="zt7-ly-Jql">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6RA-DD-5dK">
+                                <rect key="frame" x="0.0" y="186" width="414" height="400"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dKE-us-VmL">
+                                <rect key="frame" x="310" y="134" width="84" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Done">
+                                    <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="25"/>
+                                </buttonConfiguration>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="Tg1-dh-YbI"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="systemBrownColor"/>
                     </view>
+                    <connections>
+                        <outlet property="imageView" destination="6RA-DD-5dK" id="X4c-Qb-8BO"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nga-J8-PPy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -453,10 +561,12 @@
         <image name="arrow.left.and.right.righttriangle.left.righttriangle.right" catalog="system" width="128" height="112"/>
         <image name="arrowshape.turn.up.left" catalog="system" width="128" height="106"/>
         <image name="camera.filters" catalog="system" width="128" height="116"/>
+        <image name="circle.righthalf.fill" catalog="system" width="128" height="121"/>
         <image name="circlebadge.fill" catalog="system" width="128" height="120"/>
         <image name="cover" width="800" height="800"/>
         <image name="crop.rotate" catalog="system" width="114" height="128"/>
         <image name="dial.min" catalog="system" width="128" height="106"/>
+        <image name="drop.circle" catalog="system" width="128" height="121"/>
         <image name="paintpalette" catalog="system" width="128" height="105"/>
         <image name="pencil" catalog="system" width="128" height="113"/>
         <image name="rotate.left" catalog="system" width="118" height="128"/>
@@ -469,6 +579,7 @@
         <image name="sticker-4" width="100" height="100"/>
         <image name="sticker-5" width="100" height="100"/>
         <image name="sticker-6" width="100" height="100"/>
+        <image name="sun.min" catalog="system" width="128" height="121"/>
         <image name="textformat.size" catalog="system" width="128" height="80"/>
         <image name="textformat.size.smaller" catalog="system" width="128" height="122"/>
         <systemColor name="labelColor">
@@ -476,6 +587,9 @@
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBrownColor">
+            <color red="0.63529411764705879" green="0.51764705882352946" blue="0.36862745098039218" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGray5Color">
             <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
