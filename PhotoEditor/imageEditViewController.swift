@@ -74,7 +74,41 @@ class imageEditViewController: UIViewController {
     //重設圖片的button
     @IBOutlet weak var resetButton: UIButton!
     
-    //---
+    //宣告CIContext共用
+    let context = CIContext()
+    
+    //拖曳字的function
+    @objc func moveFont(_ sender: UIPanGestureRecognizer){
+        //宣告property儲存手拖曳時在containerView裡的位置點
+        let point = sender.location(in: self.containerView)
+        //設定中心點為拖曳點
+        text.center = point
+    }
+    
+    //拖曳貼圖的function
+    @objc func moveSticker(_ sender: UIPanGestureRecognizer){
+        //宣告property儲存手拖曳時在containerView裡的位置點
+        let point = sender.location(in: self.containerView)
+        //設定中心點為拖曳點
+        sticker.center = point
+    }
+    
+    //縮放貼圖的function
+    @objc func pinchSticker(_ sender: UIPinchGestureRecognizer){
+        //當兩根手指的捏合狀態改變時
+        if sender.state == .changed{
+            //宣告property儲存縮放範圍
+            let scale = sender.scale
+            //宣告property儲存原本貼圖的外框bounds的寬度
+            let w = sticker.bounds.size.width
+            
+            //讓縮放範圍為貼圖的寬為原本的寬的0.3~3倍
+            if scale > 0.3 && scale <= 3{
+                //等比例縮放貼圖
+                sticker.transform = CGAffineTransform(scaleX: scale, y: scale)
+            }
+        }
+    }
     
     
     //圖片檔案傳輸
@@ -104,7 +138,28 @@ class imageEditViewController: UIViewController {
         //按return鍵收鍵盤
         text.addTarget(self, action: #selector(closeKeyboard), for: .editingDidEndOnExit)
         
-        //---
+        //設定拖曳手勢，用在移動字
+        let panFontGestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(moveFont(_:)))
+        //設定單點觸控拖曳
+        panFontGestureRecognizer.minimumNumberOfTouches = 1
+        panFontGestureRecognizer.maximumNumberOfTouches = 1
+        //text field要開啟isUserInteractionEnabled，觸控才有反應
+        text.isUserInteractionEnabled = true
+        //將拖曳手勢加到text field上
+        text.addGestureRecognizer(panFontGestureRecognizer)
+        
+        //設定拖曳手勢，用在移動貼圖
+        let panStickerGestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(moveSticker(_:)))
+        //設定單點觸控拖曳
+        panStickerGestureRecognizer.minimumNumberOfTouches = 1
+        panStickerGestureRecognizer.maximumNumberOfTouches = 1
+        sticker.isUserInteractionEnabled = true
+        sticker.addGestureRecognizer(panStickerGestureRecognizer)
+        
+        //設定捏合手勢，用在縮放貼圖
+        let pinchStickerGestureRecognzier = UIPinchGestureRecognizer(target: self, action: #selector(pinchSticker(_:)))
+        //將捏合手勢加入貼圖中
+        sticker.addGestureRecognizer(pinchStickerGestureRecognzier)
         
 
         // Do any additional setup after loading the view.
@@ -166,8 +221,19 @@ class imageEditViewController: UIViewController {
         selectStickerView.isHidden = false
         adjustFontView.isHidden = true
     }
-    
-//    ---
+
+    @IBAction func AddSticker(_ sender: UIButton){
+        //設定貼圖的外框大小
+        sticker.frame.size = CGSize(width: 100, height: 100)
+        //圖片的顯示模式為AspectFit，才能完整顯示而且不改變圖片原本比例
+        sticker.contentMode = .scaleAspectFit
+        //讓圖片出現在imageView中間
+        sticker.center = imageView.center
+        //顯示的貼圖為點選的按鈕所對應的圖片名稱
+        sticker.image = UIImage(named: "sticker-" + "\(sender.tag)")
+        //把貼圖加到containerView中
+        containerView.addSubview(sticker)
+    }
     
     //儲存圖片水平旋轉狀態的property
     var mirrorNum = 1
@@ -215,6 +281,27 @@ class imageEditViewController: UIViewController {
         }
         turnNum += 1
     }
+    
+//    ---
+    
+    //回到上一頁
+    @IBAction func returnPage(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func reset(_ sender: Any) {
+        text.removeFromSuperview()
+        text.text?.removeAll()
+        sticker.removeFromSuperview()
+        imageView.image = selectItem
+        adjustFontView.isHidden = true
+        fontSizeSlider.isHidden = true
+        fontSizeSlider.value = 30
+        selectStickerView.isHidden = true
+        
+    }
+    
+    //    ---
     
     /*
     // MARK: - Navigation
