@@ -329,6 +329,22 @@ class imageEditViewController: UIViewController {
         // Use data from the view controller which initiated the unwind segue
     }
     
+    //從選擇濾鏡畫面回來
+    @IBAction func unwindFilterToEditView(_ unwindSegue: UIStoryboardSegue) {
+        //設定回傳資料的來源是哪個controller
+        let sourceViewController = unwindSegue.source as? imageFilterViewController
+        //imageView顯示的圖片是傳回來的輸出圖片
+        imageView.image = sourceViewController?.renderImage
+        // Use data from the view controller which initiated the unwind segue
+    }
+    
+    //從編輯圖片尺寸畫面回來
+    @IBAction func unwindRatioToEditView(_ unwindSegue: UIStoryboardSegue) {
+        let sourceViewController = unwindSegue.source as? imageRatioEditViewController
+        imageView.image = sourceViewController?.renderImage
+        // Use data from the view controller which initiated the unwind segue
+    }
+    
     //    ---
     
     

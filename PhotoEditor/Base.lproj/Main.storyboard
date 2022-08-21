@@ -104,7 +104,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vJK-U6-Oi6">
-                                <rect key="frame" x="20" y="134" width="89" height="44"/>
+                                <rect key="frame" x="0.0" y="134" width="89" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Reset">
@@ -112,17 +112,6 @@
                                 </buttonConfiguration>
                                 <connections>
                                     <action selector="reset:" destination="fcD-i1-ZsC" eventType="touchUpInside" id="nzv-dY-YoO"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bJ3-d1-t5j">
-                                <rect key="frame" x="30" y="78" width="69" height="32"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain">
-                                    <backgroundConfiguration key="background" image="arrowshape.turn.up.left" catalog="system"/>
-                                </buttonConfiguration>
-                                <connections>
-                                    <action selector="returnPage:" destination="fcD-i1-ZsC" eventType="touchUpInside" id="AdF-MJ-fRa"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aw6-Vg-bFz">
@@ -382,6 +371,17 @@
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemGray5Color"/>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bJ3-d1-t5j">
+                                <rect key="frame" x="10" y="80" width="69" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain">
+                                    <backgroundConfiguration key="background" image="arrowshape.turn.up.left" catalog="system"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="returnPage:" destination="fcD-i1-ZsC" eventType="touchUpInside" id="AdF-MJ-fRa"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="3Xt-wa-pVJ"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -511,16 +511,163 @@
                                 <buttonConfiguration key="configuration" style="plain" title="Done">
                                     <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="25"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <segue destination="NkP-GE-TR4" kind="unwind" unwindAction="unwindFilterToEditView:" id="PRp-gY-ons"/>
+                                </connections>
                             </button>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Rah-r3-I6k" userLabel="Filter View">
+                                <rect key="frame" x="0.0" y="638" width="414" height="110"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ijI-wC-FAN">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="110"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="uzI-IS-gO1">
+                                                <rect key="frame" x="0.0" y="0.0" width="980" height="100"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ksf-74-6hX">
+                                                        <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="100" id="Aoe-KN-Ck5"/>
+                                                            <constraint firstAttribute="width" constant="100" id="qOF-Oh-46y"/>
+                                                        </constraints>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="plain"/>
+                                                        <connections>
+                                                            <action selector="filterAdopt:" destination="o9E-BZ-pBB" eventType="touchUpInside" id="q4U-CB-PPz"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f8j-Ev-J6s">
+                                                        <rect key="frame" x="110" y="0.0" width="100" height="100"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="100" id="Jec-Ys-Bo9"/>
+                                                            <constraint firstAttribute="height" constant="100" id="kC4-cA-MB5"/>
+                                                        </constraints>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="plain"/>
+                                                        <connections>
+                                                            <action selector="filterAdopt:" destination="o9E-BZ-pBB" eventType="touchUpInside" id="ypw-Ym-Mwh"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fl8-mh-cWB">
+                                                        <rect key="frame" x="220" y="0.0" width="100" height="100"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="100" id="Q7J-Lg-A7C"/>
+                                                            <constraint firstAttribute="height" constant="100" id="ofv-aY-f80"/>
+                                                        </constraints>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="plain"/>
+                                                        <connections>
+                                                            <action selector="filterAdopt:" destination="o9E-BZ-pBB" eventType="touchUpInside" id="Ad5-7E-I7E"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pHW-aD-oWh">
+                                                        <rect key="frame" x="330" y="0.0" width="100" height="100"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="100" id="8Vu-MR-Sgo"/>
+                                                            <constraint firstAttribute="width" constant="100" id="aOA-O7-0OA"/>
+                                                        </constraints>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="plain"/>
+                                                        <connections>
+                                                            <action selector="filterAdopt:" destination="o9E-BZ-pBB" eventType="touchUpInside" id="tnl-NN-eDu"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lDM-UE-uLG">
+                                                        <rect key="frame" x="440" y="0.0" width="100" height="100"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="100" id="8Uq-G0-uXm"/>
+                                                            <constraint firstAttribute="height" constant="100" id="Jlr-I0-IwW"/>
+                                                        </constraints>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="plain"/>
+                                                        <connections>
+                                                            <action selector="filterAdopt:" destination="o9E-BZ-pBB" eventType="touchUpInside" id="O5M-cM-GIh"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fqe-ps-m2C">
+                                                        <rect key="frame" x="550" y="0.0" width="100" height="100"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="100" id="DFt-nk-oyT"/>
+                                                            <constraint firstAttribute="height" constant="100" id="iGJ-w4-RbF"/>
+                                                        </constraints>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="plain"/>
+                                                        <connections>
+                                                            <action selector="filterAdopt:" destination="o9E-BZ-pBB" eventType="touchUpInside" id="QdB-bP-9BU"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z9a-Wq-9DA">
+                                                        <rect key="frame" x="660" y="0.0" width="100" height="100"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="100" id="YNe-5c-kVp"/>
+                                                            <constraint firstAttribute="width" constant="100" id="dE7-aI-5eo"/>
+                                                        </constraints>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="plain"/>
+                                                        <connections>
+                                                            <action selector="filterAdopt:" destination="o9E-BZ-pBB" eventType="touchUpInside" id="VWK-TF-6MK"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yeg-Qv-dcq">
+                                                        <rect key="frame" x="770" y="0.0" width="100" height="100"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="100" id="XU2-7r-9dR"/>
+                                                            <constraint firstAttribute="height" constant="100" id="fXP-Qf-PU1"/>
+                                                        </constraints>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="plain"/>
+                                                        <connections>
+                                                            <action selector="filterAdopt:" destination="o9E-BZ-pBB" eventType="touchUpInside" id="sbb-Ex-FaC"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pxg-Fr-eFJ">
+                                                        <rect key="frame" x="880" y="0.0" width="100" height="100"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="100" id="Lxn-OI-t9N"/>
+                                                            <constraint firstAttribute="height" constant="100" id="TMH-fx-xnb"/>
+                                                        </constraints>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="plain"/>
+                                                        <connections>
+                                                            <action selector="filterAdopt:" destination="o9E-BZ-pBB" eventType="touchUpInside" id="aRG-iv-S3o"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="uzI-IS-gO1" firstAttribute="trailing" secondItem="tKG-Wa-YRR" secondAttribute="trailing" id="Acg-mR-Mur"/>
+                                            <constraint firstItem="uzI-IS-gO1" firstAttribute="leading" secondItem="tKG-Wa-YRR" secondAttribute="leading" id="JNo-XK-b95"/>
+                                            <constraint firstItem="uzI-IS-gO1" firstAttribute="bottom" secondItem="tKG-Wa-YRR" secondAttribute="bottom" id="Veh-cx-gBL"/>
+                                            <constraint firstItem="uzI-IS-gO1" firstAttribute="top" secondItem="tKG-Wa-YRR" secondAttribute="top" id="Wwp-lq-fAN"/>
+                                        </constraints>
+                                        <viewLayoutGuide key="contentLayoutGuide" id="tKG-Wa-YRR"/>
+                                        <viewLayoutGuide key="frameLayoutGuide" id="e5a-to-0lx"/>
+                                    </scrollView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="az5-ap-lde"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <connections>
                         <outlet property="imageView" destination="6ig-70-V16" id="NPy-ev-Iyt"/>
+                        <outletCollection property="filterButton" destination="ksf-74-6hX" collectionClass="NSMutableArray" id="HzK-ZG-Bu8"/>
+                        <outletCollection property="filterButton" destination="f8j-Ev-J6s" collectionClass="NSMutableArray" id="jhE-re-OWS"/>
+                        <outletCollection property="filterButton" destination="Fl8-mh-cWB" collectionClass="NSMutableArray" id="au1-9r-IaV"/>
+                        <outletCollection property="filterButton" destination="pHW-aD-oWh" collectionClass="NSMutableArray" id="U0s-DA-yUX"/>
+                        <outletCollection property="filterButton" destination="lDM-UE-uLG" collectionClass="NSMutableArray" id="44M-jb-FAf"/>
+                        <outletCollection property="filterButton" destination="fqe-ps-m2C" collectionClass="NSMutableArray" id="IgE-R4-zpC"/>
+                        <outletCollection property="filterButton" destination="z9a-Wq-9DA" collectionClass="NSMutableArray" id="wdZ-CS-0jO"/>
+                        <outletCollection property="filterButton" destination="yeg-Qv-dcq" collectionClass="NSMutableArray" id="uo2-R1-eRi"/>
+                        <outletCollection property="filterButton" destination="Pxg-Fr-eFJ" collectionClass="NSMutableArray" id="qnd-Up-oxo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fuU-bT-qj0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="NkP-GE-TR4" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1676.8115942028987" y="65.625"/>
         </scene>
