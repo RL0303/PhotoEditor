@@ -14,6 +14,9 @@ class imageAdjustViewController: UIViewController {
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var imageView: UIImageView!
     
+    //顯示現在是哪個編輯畫面的圓點property
+    @IBOutlet var dotImageViews: [UIImageView]!
+    
     @IBOutlet var adjustSliders: [UISlider]!
 
     //editedImage是上一頁編輯後的UIImage
@@ -36,6 +39,11 @@ class imageAdjustViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        for i in 1...3{
+            dotImageViews[i].isHidden = true
+        }
+        
         imageView.image = editedImage
         print(CIFilter(name: "CIColorControls")?.attributes ?? "")
 
