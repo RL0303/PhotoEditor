@@ -143,6 +143,9 @@
                                 <buttonConfiguration key="configuration" style="plain">
                                     <backgroundConfiguration key="background" image="square.and.arrow.down" catalog="system"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="saveImage:" destination="fcD-i1-ZsC" eventType="touchUpInside" id="REQ-72-Q5n"/>
+                                </connections>
                             </button>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UJn-AJ-gLW" userLabel="Container View">
                                 <rect key="frame" x="0.0" y="186" width="414" height="400"/>
@@ -891,6 +894,9 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="rectangle.portrait" catalog="system"/>
+                                <connections>
+                                    <action selector="setPortrait:" destination="BvL-VV-4HA" eventType="touchUpInside" id="N92-U3-b6U"/>
+                                </connections>
                             </button>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5MA-YK-YW1">
                                 <rect key="frame" x="22" y="679" width="372" height="84"/>
@@ -909,6 +915,9 @@
                                                     <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <color key="baseBackgroundColor" systemColor="tintColor"/>
                                                 </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="changeRatio:" destination="BvL-VV-4HA" eventType="touchUpInside" id="lry-t4-dzl"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fbF-mC-YtC" userLabel="Square">
                                                 <rect key="frame" x="103" y="0.0" width="85" height="31"/>
@@ -920,6 +929,9 @@
                                                     <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <color key="baseBackgroundColor" systemColor="tintColor"/>
                                                 </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="changeRatio:" destination="BvL-VV-4HA" eventType="touchUpInside" id="pYd-OZ-Ukr"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jDN-vL-hGv">
                                                 <rect key="frame" x="206" y="0.0" width="85" height="31"/>
@@ -931,6 +943,9 @@
                                                     <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <color key="baseBackgroundColor" systemColor="tintColor"/>
                                                 </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="changeRatio:" destination="BvL-VV-4HA" eventType="touchUpInside" id="ccX-rs-2Kn"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aoQ-Fn-b1n">
                                                 <rect key="frame" x="309" y="0.0" width="85" height="31"/>
@@ -942,6 +957,9 @@
                                                     <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <color key="baseBackgroundColor" systemColor="tintColor"/>
                                                 </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="changeRatio:" destination="BvL-VV-4HA" eventType="touchUpInside" id="wHs-By-ovu"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O9U-UN-uay">
                                                 <rect key="frame" x="412" y="0.0" width="85" height="31"/>
@@ -953,6 +971,9 @@
                                                     <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <color key="baseBackgroundColor" systemColor="tintColor"/>
                                                 </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="changeRatio:" destination="BvL-VV-4HA" eventType="touchUpInside" id="b9F-Tk-FLg"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1JV-0Q-AoG">
                                                 <rect key="frame" x="515" y="0.0" width="85" height="31"/>
@@ -964,6 +985,9 @@
                                                     <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <color key="baseBackgroundColor" systemColor="tintColor"/>
                                                 </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="changeRatio:" destination="BvL-VV-4HA" eventType="touchUpInside" id="Op3-8v-tN1"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ias-vI-65N">
                                                 <rect key="frame" x="618" y="0.0" width="85" height="31"/>
@@ -975,6 +999,9 @@
                                                     <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <color key="baseBackgroundColor" systemColor="tintColor"/>
                                                 </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="changeRatio:" destination="BvL-VV-4HA" eventType="touchUpInside" id="5Db-A3-khH"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qzn-JZ-zVV">
                                                 <rect key="frame" x="721" y="0.0" width="85" height="31"/>
@@ -986,6 +1013,9 @@
                                                     <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <color key="baseBackgroundColor" systemColor="tintColor"/>
                                                 </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="changeRatio:" destination="BvL-VV-4HA" eventType="touchUpInside" id="q6a-Sv-hTH"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <constraints>
@@ -1022,6 +1052,9 @@
                                                     <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <color key="baseBackgroundColor" systemColor="tintColor"/>
                                                 </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="changeRatio:" destination="BvL-VV-4HA" eventType="touchUpInside" id="LvH-W8-wOc"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wnc-Ki-RHw" userLabel="Square">
                                                 <rect key="frame" x="103" y="0.0" width="85" height="31"/>
@@ -1033,6 +1066,9 @@
                                                     <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <color key="baseBackgroundColor" systemColor="tintColor"/>
                                                 </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="changeRatio:" destination="BvL-VV-4HA" eventType="touchUpInside" id="WyS-Sp-Gft"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XqV-kV-ya8">
                                                 <rect key="frame" x="206" y="0.0" width="85" height="31"/>
@@ -1044,6 +1080,9 @@
                                                     <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <color key="baseBackgroundColor" systemColor="tintColor"/>
                                                 </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="changeRatio:" destination="BvL-VV-4HA" eventType="touchUpInside" id="Kaw-3c-Z4U"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Egx-tM-pZG">
                                                 <rect key="frame" x="309" y="0.0" width="85" height="31"/>
@@ -1055,6 +1094,9 @@
                                                     <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <color key="baseBackgroundColor" systemColor="tintColor"/>
                                                 </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="changeRatio:" destination="BvL-VV-4HA" eventType="touchUpInside" id="3sX-ar-KnQ"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dGV-Cl-j4V">
                                                 <rect key="frame" x="412" y="0.0" width="85" height="31"/>
@@ -1066,6 +1108,9 @@
                                                     <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <color key="baseBackgroundColor" systemColor="tintColor"/>
                                                 </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="changeRatio:" destination="BvL-VV-4HA" eventType="touchUpInside" id="UT4-E1-S40"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pvg-AQ-R5I">
                                                 <rect key="frame" x="515" y="0.0" width="85" height="31"/>
@@ -1077,6 +1122,9 @@
                                                     <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <color key="baseBackgroundColor" systemColor="tintColor"/>
                                                 </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="changeRatio:" destination="BvL-VV-4HA" eventType="touchUpInside" id="XOa-LB-zon"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zgw-bh-SdP">
                                                 <rect key="frame" x="618" y="0.0" width="85" height="31"/>
@@ -1088,6 +1136,9 @@
                                                     <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <color key="baseBackgroundColor" systemColor="tintColor"/>
                                                 </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="changeRatio:" destination="BvL-VV-4HA" eventType="touchUpInside" id="PRU-b3-CSB"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OlI-MM-h0r">
                                                 <rect key="frame" x="721" y="0.0" width="85" height="31"/>
@@ -1099,6 +1150,9 @@
                                                     <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <color key="baseBackgroundColor" systemColor="tintColor"/>
                                                 </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="changeRatio:" destination="BvL-VV-4HA" eventType="touchUpInside" id="Jj6-cN-ve5"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <constraints>
@@ -1141,6 +1195,9 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="rectangle" catalog="system"/>
+                                <connections>
+                                    <action selector="setLandscape:" destination="BvL-VV-4HA" eventType="touchUpInside" id="0r2-z4-5NT"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Tg1-dh-YbI"/>
@@ -1150,7 +1207,9 @@
                         <outlet property="containerView" destination="JiM-b7-SGs" id="aib-jv-TeK"/>
                         <outlet property="imageScrollView" destination="Txa-RH-zsw" id="wZi-Si-WKb"/>
                         <outlet property="imageView" destination="6RA-DD-5dK" id="X4c-Qb-8BO"/>
+                        <outlet property="landStackView" destination="2ut-u5-1ZW" id="Fb0-Lg-yCC"/>
                         <outlet property="landscapeButton" destination="T4f-Kw-8Dk" id="69X-u3-Q88"/>
+                        <outlet property="porStackView" destination="dco-jH-YPV" id="OQX-NE-xCU"/>
                         <outlet property="portraitButton" destination="I6y-ad-fhB" id="aNh-5V-wjd"/>
                     </connections>
                 </viewController>

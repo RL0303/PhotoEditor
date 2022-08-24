@@ -23,6 +23,9 @@ extension imageRatioEditViewController: UIScrollViewDelegate {
 
 class imageRatioEditViewController: UIViewController {
     
+    
+    @IBOutlet weak var landStackView: UIStackView!
+    @IBOutlet weak var porStackView: UIStackView!
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var imageScrollView: UIScrollView!
     @IBOutlet weak var imageView: UIImageView!
@@ -54,8 +57,6 @@ class imageRatioEditViewController: UIViewController {
     
     @IBOutlet var ratioButtons: [UIButton]!
     
-    //num用來判斷選擇裁切框是直的(1)還是橫的(0)
-    var num = 0
     
     //圖片檔案傳輸
     init?(coder: NSCoder, editedImage: UIImage){
@@ -272,18 +273,23 @@ class imageRatioEditViewController: UIViewController {
         return cornerLayer
     }
     
+    //num用來判斷選擇裁切框是直的(1)還是橫的(0)
+    var num = 0
     
     @IBAction func setPortrait(_ sender: Any) {
         num = 1
         portraitButton.isSelected = true
         landscapeButton.isSelected = false
+        porStackView.isHidden = false
+        landStackView.isHidden = true
     }
     
     @IBAction func setLandscape(_ sender: Any) {
         num = 0
         portraitButton.isSelected = false
         landscapeButton.isSelected = true
-        
+        porStackView.isHidden = true
+        landStackView.isHidden = false
     }
     
     @IBAction func changeRatio(_ sender: UIButton){
@@ -371,6 +377,31 @@ class imageRatioEditViewController: UIViewController {
             }
         }
         
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        //移除裁切框
+        cropFrame.removeFromSuperview()
+        
+        let imgW = editedImage.size.width
+        let imgH = editedImage.size.height
+
+        let offsetX = (containerView.bounds.width - cropFrame.frame.width) / 2
+        let offsetY = (containerView.bounds.height - cropFrame.frame.height) / 2
+        
+        if imgW > imgH{
+            let renderer = UIGraphicsImageRenderer(bounds: CGRect(x: cropFrame.frame.minX, y: cropFrame.frame.minY + offsetY, width: cropFrame.frame.width, height: cropFrame.frame.height))
+            renderImage = renderer.image(actions: { (context) in
+                  containerView.drawHierarchy(in: containerView.bounds, afterScreenUpdates: true)
+            })
+            
+        }else if imgW < imgH{
+            let renderer = UIGraphicsImageRenderer(bounds: CGRect(x: cropFrame.frame.minX + offsetX, y: cropFrame.frame.minY, width: cropFrame.frame.width, height: cropFrame.frame.height))
+            renderImage = renderer.image(actions: { (context) in
+                  containerView.drawHierarchy(in: containerView.bounds, afterScreenUpdates: true)
+            })
+        }
+    
     }
     /*
      // MARK: - Navigation

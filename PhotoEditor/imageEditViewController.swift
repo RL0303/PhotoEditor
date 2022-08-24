@@ -345,7 +345,29 @@ class imageEditViewController: UIViewController {
         // Use data from the view controller which initiated the unwind segue
     }
     
-    //    ---
+    @IBAction func saveImage(_ sender: Any) {
+        editedImage = imageView.image!
+        let imgW = editedImage.size.width
+        let imgH = editedImage.size.height
+        let viewW = imageView.frame.width
+        let viewH = imageView.frame.height
+        let scale = min(viewW / imgW, viewH / imgH)
+        let newWidth = imgW * scale
+        let newHeight = imgH * scale
+        let offsetX = (viewW - newWidth) / 2
+        let offsetY = (viewH - newHeight) / 2
+        
+
+        let renderer = UIGraphicsImageRenderer(bounds: CGRect(x: imageView.frame.minX + offsetX, y: imageView.frame.minY + offsetY, width: newWidth, height: newHeight))
+        renderImage = renderer.image(actions: { (context) in
+              containerView.drawHierarchy(in: imageView.bounds, afterScreenUpdates: true)
+        })
+        
+        let activityViewController = UIActivityViewController(activityItems: [renderImage], applicationActivities: nil)
+        present(activityViewController, animated: true, completion: nil)
+        
+        
+    }
     
     
     
